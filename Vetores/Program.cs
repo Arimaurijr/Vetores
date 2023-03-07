@@ -61,6 +61,23 @@ internal class Program
             }
         }
 
+        void OrdenarVetor(int[] v)
+        {
+            int i, j;
+            for(i =0; i< v.Length - 1;i++)
+            {
+                for(j = i+1; j < v.Length;j++)
+                {
+                    if (v[i] > v[j])
+                    {
+                        int aux = v[i];
+                        v[i] = v[j];
+                        v[j] = aux;
+                    }
+                }
+            }
+        }
+
         void ExibirDados(int[] vetor, string nome)
         {
             Console.WriteLine();

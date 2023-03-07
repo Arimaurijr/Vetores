@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿//Primeiro exercicio de vetor
+internal class Program
 {
     private static void Main(string[] args)
     {

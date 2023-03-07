@@ -7,10 +7,13 @@ internal class Program
         int[] B = new int[5];
         int[] C = new int[10];
 
-        void Entrada(int[] vetor, int tamanho)
+        void Entrada(int[] vetor, string nome)
         {
-            for(int i = 0; i < tamanho; i++)
+            Console.WriteLine();
+            Console.WriteLine("ENTRADA DOS VALORES DO VETOR " + nome);
+            for(int i = 0; i < vetor.Length; i++)
             {
+                //Console.WriteLine(Vetor[{0}] = ",i)
                 Console.WriteLine("DIGITE O " + (i + 1) + " º ELEMENTO: ");
                 vetor[i] = int.Parse(Console.ReadLine());
             }
@@ -39,22 +42,60 @@ internal class Program
             }
         }
 
-        void ExibirDados(int[] vetor, int tamanho)
+        void OrdenarVetorCrescente()
         {
-            Console.WriteLine("EXIBIÇÃO DOS VALORES DO VETOR: ");
-            for(int i = 0; i < tamanho;i++) 
+            Console.WriteLine();
+            Console.WriteLine("ORDENAÇÃO DO VETOR C:");
+            int aux = 0;
+            for(int i = 0;i< C.Length;i++)
+            {
+                for(int j = i+1; j < C.Length;j++) 
+                {
+                    if (C[i] > C[j])
+                    {
+                        aux = C[i];
+                        C[i] = C[j];
+                        C[j] = aux;
+                    }
+                }
+            }
+        }
+
+        void ExibirDados(int[] vetor, string nome)
+        {
+            Console.WriteLine();
+            Console.WriteLine("ENTRADA DOS VALORES DO VETOR " + nome);
+            for (int i = 0; i < vetor.Length;i++) 
             {
                 Console.Write(vetor[i] + " ");
             }
 
             Console.WriteLine();
         }
+        /*
+         * int[] Concatenar_Vetor(int[] A, int[] B)
+         * {
+         *      int[] aux = = new int[10];
+         *      for(int i = 0; i < A.Lenght; i++)
+         *      {
+         *          aux[i] = A[i];
+         *      }
+         *      for(int i = 0;i < B.Lenght; i++)
+         *      {
+         *          aux[i+5] = B[i]
+         *      }
+         *      
+         *      return aux
+         * }
+         */
 
-        Entrada(A, 5);
-        Entrada(B, 5);
+        Entrada(A, "A");
+        Entrada(B, "B");
         InserirVetorC();
-        ExibirDados(A, 5);
-        ExibirDados(B, 5);
-        ExibirDados(C, 10);
+        ExibirDados(A, "A");
+        ExibirDados(B, "B");
+        ExibirDados(C, "C");
+        OrdenarVetorCrescente();
+        ExibirDados(C, "C");
     }
 }
